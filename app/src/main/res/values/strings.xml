@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Scavenger</string>
+
+    <!-- LOGIN & SPLASH -->
+    <string name="raccoon_img_content_desc">Scavenger Raccoon Image</string>
+    <string name="login_user_hint">Enter Username</string>
+    <string name="login_pw_hint">Enter Password</string>
+    <string name="login_play">Play</string>
+    <string name="login_register">Register</string>
+    <string name="login_save">Save Password</string>
+    <string name="login_forgot">Forgot Password?</string>
+    <string name="login_white">White Background</string>
+
+    <!--COLORS-->
+    <color name="teal">#82C9C7</color>
+    <color name="orange">#F68C3D</color>
+    <color name="white">#ffffff</color>
+
+    <!--DEFAULTS-->
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
