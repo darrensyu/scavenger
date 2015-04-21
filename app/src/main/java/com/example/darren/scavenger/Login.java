@@ -44,7 +44,7 @@ public class Login extends Activity{
         log_btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "PLAY IS CLICKED", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "PLAY CLICKED", Toast.LENGTH_SHORT).show();
             }
         });
 
