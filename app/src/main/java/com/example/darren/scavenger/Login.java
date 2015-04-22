@@ -2,6 +2,7 @@ package com.example.darren.scavenger;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -44,7 +45,7 @@ public class Login extends Activity{
         log_btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "PLAY CLICKED", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),MainScreen.class));
             }
         });
 
