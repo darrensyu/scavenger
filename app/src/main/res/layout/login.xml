@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/login_img"
         android:contentDescription="@string/raccoon_img_content_desc"
-        android:src="@drawable/register_logo"
+        android:src="@drawable/register_logo_med"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"/>
 
@@ -75,6 +75,17 @@
             android:gravity="end|center"/>
     </LinearLayout>
 
+    <ImageButton
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_btn_register"
+        android:contentDescription="@string/login_register"
+        android:background="@drawable/register_registerbutton"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"/>
 
     <ImageButton
         android:layout_width="fill_parent"
@@ -82,19 +93,9 @@
         android:id="@+id/login_btn_play"
         android:contentDescription="@string/login_play"
         android:background="@drawable/register_playbutton"
-        android:layout_below="@id/save_forgot_bar"
+        android:layout_above="@id/login_btn_register"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="35dp"/>
+        android:layout_marginRight="25dp"/>
 
-    <ImageButton
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/login_btn_register"
-        android:contentDescription="@string/login_register"
-        android:background="@drawable/register_registerbutton"
-        android:layout_below="@id/login_btn_play"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="5dp"/>
+
 </RelativeLayout>

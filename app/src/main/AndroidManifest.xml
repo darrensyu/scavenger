@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="Scavenger - Main" />
+            android:label="Scavenger - MainDrawer" />
         <activity
             android:name=".Login"
             android:label="Scavenger - Login" />

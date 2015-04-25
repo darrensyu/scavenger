@@ -10,7 +10,7 @@
         android:id="@+id/main_raccoon_img"
         android:src="@drawable/splash_logo_med"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:paddingRight="10dp"/>
 
     <LinearLayout
@@ -20,7 +20,7 @@
         android:layout_below="@id/main_raccoon_img"
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="65dp"
         android:layout_centerHorizontal="true">
         <RelativeLayout
             android:layout_width="wrap_content"

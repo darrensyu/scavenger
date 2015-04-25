@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -45,7 +46,21 @@ public class Login extends Activity{
         log_btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainScreen.class));
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+
+                        Intent intent = new Intent();
+                        intent.setClass(Login.this, MainScreen.class);
+
+                        Login.this.startActivity(intent);
+                        Login.this.finish();
+
+                        // transition from splash to main menu
+                        overridePendingTransition(R.anim.activityfadein,
+                                R.anim.splashfadeout);
+
+                    }
+                }, 500);
             }
         });
 
