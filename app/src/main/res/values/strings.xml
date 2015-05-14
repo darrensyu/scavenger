@@ -11,6 +11,13 @@
     <string name="login_forgot">Forgot Password?</string>
     <string name="login_white">White Background</string>
 
+    <!--REGISTER SCREEN-->
+    <string name="reg_img_header_desc">Register Screen Header</string>
+    <string name="reg_user_hint">Enter username</string>
+    <string name="reg_email_hint">Enter email</string>
+    <string name="reg_pw_hint">Enter password</string>
+    <string name="reg_img_desc">Register Button</string>
+
     <!-- MAIN SCREEN-->
     <string name="main_scavenge">scavenge</string>
     <string name="main_chest">my chest</string>

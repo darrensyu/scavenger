@@ -67,7 +67,21 @@ public class Login extends Activity{
         log_btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "REGISTER CLICKED", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+
+                        Intent intent = new Intent();
+                        intent.setClass(Login.this, Register.class);
+
+                        Login.this.startActivity(intent);
+                        Login.this.finish();
+
+                        // transition from splash to main menu
+                        overridePendingTransition(R.anim.activityfadein,
+                                R.anim.splashfadeout);
+
+                    }
+                }, 500);
             }
         });
 
