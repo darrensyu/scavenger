@@ -37,11 +37,10 @@
         <activity
             android:name=".MainScreen"
             android:label="Scavenger - Main" />
-        <activity
-            android:name=".Register"
-            android:label="Scavenger - Register"/>
         <activity android:name=".Settings"
             android:label="Scavenger - Settings"/>
+        <activity android:name=".Register"
+            android:label="Scavenger - Register"/>
 
         <meta-data
             android:name="com.google.android.gms.version"

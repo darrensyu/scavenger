@@ -2,8 +2,10 @@ package com.example.darren.scavenger;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -71,7 +73,20 @@ public class MainScreen extends Activity {
         btn_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "SETTINGS CLICKED", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+
+                        Intent intent = new Intent();
+                        intent.setClass(MainScreen.this, Settings.class);
+
+                        MainScreen.this.startActivity(intent);
+
+                        // transition from splash to main menu
+                        overridePendingTransition(R.anim.activityfadein,
+                                R.anim.splashfadeout);
+
+                    }
+                }, 500);
             }
         });
 

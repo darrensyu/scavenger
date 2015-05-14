@@ -13,9 +13,157 @@
         android:layout_height="wrap_content"
         android:id="@+id/settings_notifications_text"
         android:text="@string/settings_txt_notifications"
-        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:layout_below="@id/settings_header"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/vibrate_bar"
+        android:layout_below="@id/settings_notifications_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings_notifications_vibrate"
+            android:text="@string/settings_txt_vibrate"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            android:layout_weight="8"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checked="false"
+            android:id="@+id/settings_notifications_vibrate_switch" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/alert_sounds_bar"
+        android:layout_below="@id/vibrate_bar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings_notifications_alert_sounds"
+            android:text="@string/settings_txt_alert"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            android:layout_weight="8"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings_notifications_alert_sounds_switch"
+            android:layout_gravity="center"
+            android:checked="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/push_bar"
+        android:layout_below="@id/alert_sounds_bar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings_notifications_push"
+            android:text="@string/settings_txt_push"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            android:layout_weight="8"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings_notifications_push_switch"
+            android:layout_gravity="center"
+            android:checked="false"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_info_text"
+        android:text="@string/settings_txt_info"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_below="@id/push_bar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_support_text"
+        android:text="@string/settings_txt_support"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:layout_below="@id/settings_info_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_privacy_policy_text"
+        android:text="@string/settings_txt_privacy"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:layout_below="@id/settings_support_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_feedback_text"
+        android:text="@string/settings_txt_feedback"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:layout_below="@id/settings_privacy_policy_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <ImageButton
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_save_updates"
+        android:contentDescription="@string/settings_btn_updates"
+        android:layout_below="@id/settings_feedback_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <ImageButton
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_btn_sign_out"
+        android:contentDescription="@string/settings_btn_sign_out"
+        android:layout_below="@id/settings_btn_save_updates"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
 </RelativeLayout>

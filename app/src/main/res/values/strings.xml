@@ -27,11 +27,24 @@
     <!-- SETTINGS SCREEN-->
     <string name="settings_header_desc">Settings Screen</string>
     <string name="settings_txt_notifications">Notifications</string>
+    <string name="settings_txt_vibrate">In-App Vibrate</string>
+    <string name="settings_txt_alert">In-App Alert Sounds</string>
+    <string name="settings_txt_push">Push Notifications</string>
+    <string name="settings_txt_info">Information</string>
+    <string name="settings_txt_support">Support</string>
+    <string name="settings_txt_privacy">Privacy Policy</string>
+    <string name="settings_txt_feedback">Send Feedback</string>
+    <string name="settings_btn_updates">Save Updates</string>
+    <string name="settings_btn_sign_out">Sign Out</string>
+
 
     <!--COLORS-->
     <color name="teal">#82C9C7</color>
     <color name="orange">#F68C3D</color>
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey">#33000000</color>
 
     <!--DEFAULTS-->
     <string name="title_section1">Section 1</string>

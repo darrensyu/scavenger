@@ -53,6 +53,5 @@
         android:layout_below="@id/reg_et_pw"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
+        android:layout_marginRight="20dp" />
 </RelativeLayout>
