@@ -74,7 +74,6 @@ public class Login extends Activity{
                         intent.setClass(Login.this, Register.class);
 
                         Login.this.startActivity(intent);
-                        Login.this.finish();
 
                         // transition from splash to main menu
                         overridePendingTransition(R.anim.activityfadein,

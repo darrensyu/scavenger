@@ -2,10 +2,8 @@ package com.example.darren.scavenger;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -40,21 +38,7 @@ public class Register extends Activity {
         reg_btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-
-                        Intent intent = new Intent();
-                        intent.setClass(Register.this, Login.class);
-
-                        Register.this.startActivity(intent);
-                        Register.this.finish();
-
-                        // transition from splash to main menu
-                        overridePendingTransition(R.anim.activityfadein,
-                                R.anim.splashfadeout);
-
-                    }
-                }, 500);
+                finish();
             }
         });
     }

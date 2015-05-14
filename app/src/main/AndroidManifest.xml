@@ -40,6 +40,8 @@
         <activity
             android:name=".Register"
             android:label="Scavenger - Register"/>
+        <activity android:name=".Settings"
+            android:label="Scavenger - Settings"/>
 
         <meta-data
             android:name="com.google.android.gms.version"

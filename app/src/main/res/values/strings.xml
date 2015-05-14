@@ -24,6 +24,10 @@
     <string name="main_invite">invite</string>
     <string name="main_settings">settings</string>
 
+    <!-- SETTINGS SCREEN-->
+    <string name="settings_header_desc">Settings Screen</string>
+    <string name="settings_txt_notifications">Notifications</string>
+
     <!--COLORS-->
     <color name="teal">#82C9C7</color>
     <color name="orange">#F68C3D</color>
