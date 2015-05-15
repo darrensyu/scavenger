@@ -70,4 +70,5 @@
     <string name="default_text">Scavenger</string>
 
     <string name="facebook_app_id">1662821687280864</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
