@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/teal">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:id="@+id/chest_header_img"
+        android:contentDescription="@string/chest_header_desc"
+        android:background="@drawable/chest_headerlogo"/>
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chest_list"
+        android:layout_below="@id/chest_header_img"
+        android:background="@color/teal"/>
+
+</RelativeLayout>

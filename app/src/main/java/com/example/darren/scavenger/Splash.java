@@ -21,7 +21,7 @@ public class Splash extends Activity{
             public void run() {
 
                 Intent intent = new Intent();
-                intent.setClass(Splash.this, Login.class);
+                intent.setClass(Splash.this, MainScreen.class);
 
                 Splash.this.startActivity(intent);
                 Splash.this.finish();

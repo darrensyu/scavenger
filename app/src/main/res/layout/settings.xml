@@ -4,7 +4,7 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="80dp"
-        android:id="@+id/settings_header"
+        android:id="@+id/settings_header_img"
         android:contentDescription="@string/settings_header_desc"
         android:background="@drawable/settings_header"/>
 
@@ -15,7 +15,7 @@
         android:text="@string/settings_txt_notifications"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:layout_below="@id/settings_header"
+        android:layout_below="@id/settings_header_img"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"/>
@@ -151,8 +151,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/settings_btn_save_updates"
         android:contentDescription="@string/settings_btn_updates"
+        android:background="@drawable/settings_save"
         android:layout_below="@id/settings_feedback_text"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"/>
 
@@ -161,6 +162,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/settings_btn_sign_out"
         android:contentDescription="@string/settings_btn_sign_out"
+        android:background="@drawable/settings_signout"
         android:layout_below="@id/settings_btn_save_updates"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="40dp"

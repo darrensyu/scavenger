@@ -52,7 +52,20 @@ public class MainScreen extends Activity {
         btn_chest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "CHEST CLICKED", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+
+                        Intent intent = new Intent();
+                        intent.setClass(MainScreen.this, Chest.class);
+
+                        MainScreen.this.startActivity(intent);
+
+                        // transition from splash to main menu
+                        overridePendingTransition(R.anim.activityfadein,
+                                R.anim.splashfadeout);
+
+                    }
+                }, 500);
             }
         });
 

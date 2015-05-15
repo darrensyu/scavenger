@@ -75,27 +75,45 @@
             android:gravity="end|center"/>
     </LinearLayout>
 
-    <ImageButton
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/login_btn_register"
-        android:contentDescription="@string/login_register"
-        android:background="@drawable/register_registerbutton"
-        android:layout_marginLeft="25dp"
+        android:id="@+id/login_btn_set"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="80dp"
-        android:layout_alignParentBottom="true"/>
-
-    <ImageButton
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/login_btn_play"
-        android:contentDescription="@string/login_play"
-        android:background="@drawable/register_playbutton"
-        android:layout_above="@id/login_btn_register"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/save_forgot_bar">
+
+        <com.facebook.login.widget.LoginButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_facebook_btn"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_btn_play"
+            android:contentDescription="@string/login_play"
+            android:background="@drawable/register_playbutton"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/login_facebook_btn"/>
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_btn_register"
+            android:contentDescription="@string/login_register"
+            android:background="@drawable/register_registerbutton"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/login_btn_play"/>
+
+
+    </RelativeLayout>
+
+
+
+
 
 
 </RelativeLayout>

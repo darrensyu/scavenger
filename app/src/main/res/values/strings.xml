@@ -37,14 +37,21 @@
     <string name="settings_btn_updates">Save Updates</string>
     <string name="settings_btn_sign_out">Sign Out</string>
 
+    <!-- CHEST SCREEN -->
+    <string name="chest_header_desc">Chest Screen</string>
+    <string name="chest_btn_share_desc">Share Button</string>
+    <string name="chest_btn_visit_desc">Visit Button</string>
+    <string name="chest_def_text">$5 GIFT CARD TO JAMBA JUICE</string>
 
     <!--COLORS-->
     <color name="teal">#82C9C7</color>
     <color name="orange">#F68C3D</color>
-    <color name="white">#ffffff</color>
+    <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
     <color name="grey">#33000000</color>
+    <color name="light_teal">#C7E8E7</color>
+    <color name="blue">#547DBF</color>
 
     <!--DEFAULTS-->
     <string name="title_section1">Section 1</string>
@@ -58,4 +65,9 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_scavenge">Scavenge</string>
+
+    <string name="default_number">11</string>
+    <string name="default_text">Scavenger</string>
+
+    <string name="facebook_app_id">1662821687280864</string>
 </resources>

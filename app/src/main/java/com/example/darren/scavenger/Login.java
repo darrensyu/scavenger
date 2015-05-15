@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 /**
  * Created by Darren on 4/20/2015.
  * Copyright 2015 Darren Syu
@@ -31,8 +34,9 @@ public class Login extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
         context = getApplicationContext();
+        FacebookSdk.sdkInitialize(context);
+        setContentView(R.layout.login);
         log_btn_play = (ImageButton) findViewById(R.id.login_btn_play);
         log_btn_register = (ImageButton) findViewById(R.id.login_btn_register);
         log_et_username = (EditText) findViewById(R.id.login_et_user);
@@ -50,7 +54,7 @@ public class Login extends Activity{
                     public void run() {
 
                         Intent intent = new Intent();
-                        intent.setClass(Login.this, MainScreen.class);
+                        intent.setClass(Login.this, Splash.class);
 
                         Login.this.startActivity(intent);
                         Login.this.finish();
@@ -90,5 +94,17 @@ public class Login extends Activity{
                 Toast.makeText(context, "FORGOT CLICKED", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        AppEventsLogger.deactivateApp(this);
     }
 }

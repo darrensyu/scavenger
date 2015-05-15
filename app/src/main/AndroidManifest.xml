@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Splash"
+            android:name=".Login"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,15 +32,31 @@
             android:name=".MainActivity"
             android:label="Scavenger - MainDrawer" />
         <activity
-            android:name=".Login"
-            android:label="Scavenger - Login" />
+            android:name=".Splash"
+            android:label="Scavenger" />
+
         <activity
             android:name=".MainScreen"
             android:label="Scavenger - Main" />
-        <activity android:name=".Settings"
+
+        <activity
+            android:name=".Chest"
+            android:label="Scavenger - Chest"/>
+
+        <activity
+            android:name=".Settings"
             android:label="Scavenger - Settings"/>
-        <activity android:name=".Register"
+
+        <activity
+            android:name=".Register"
             android:label="Scavenger - Register"/>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -49,6 +65,8 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <activity
             android:name=".Scavenge"
             android:label="@string/title_activity_scavenge" >
