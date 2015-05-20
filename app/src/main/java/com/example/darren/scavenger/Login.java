@@ -57,6 +57,7 @@ public class Login extends Activity{
                         intent.setClass(Login.this, Splash.class);
 
                         Login.this.startActivity(intent);
+                        log_btn_play.setEnabled(false);
                         Login.this.finish();
 
                         // transition from splash to main menu

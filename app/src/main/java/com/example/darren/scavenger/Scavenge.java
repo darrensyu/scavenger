@@ -40,9 +40,7 @@ public class Scavenge extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scavenge);
         context = getApplicationContext();
-        if (map == null){
-            map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-        }
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setMyLocationEnabled(true);
         buildGoogleApiClient();
     }
