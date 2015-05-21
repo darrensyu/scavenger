@@ -43,8 +43,12 @@
     <string name="chest_btn_visit_desc">Visit Button</string>
     <string name="chest_def_text">$5 GIFT CARD TO JAMBA JUICE</string>
 
+    <!--SCAVENGE SCREEN -->
+    <string name="scv_text">Nothing found yet!</string>
+
     <!--COLORS-->
     <color name="teal">#82C9C7</color>
+    <color name="scavenge_box_color">#81CAC8</color>
     <color name="orange">#F68C3D</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
