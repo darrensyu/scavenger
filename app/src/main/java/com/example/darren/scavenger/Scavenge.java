@@ -38,7 +38,7 @@ public class Scavenge extends Activity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scavenge);
+        setContentView(R.layout.scavenge);
         context = getApplicationContext();
         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setMyLocationEnabled(true);

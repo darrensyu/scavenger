@@ -36,7 +36,7 @@
             android:label="Scavenger" />
         <activity
             android:name=".MainScreen"
-            android:label="Scavenger - Main" />
+            android:label="Scavenger - Main"/>
         <activity
             android:name=".Chest"
             android:label="Scavenger - Chest" />

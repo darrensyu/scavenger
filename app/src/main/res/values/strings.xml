@@ -21,7 +21,7 @@
     <!-- MAIN SCREEN-->
     <string name="main_scavenge">scavenge</string>
     <string name="main_chest">my chest</string>
-    <string name="main_invite">invite</string>
+    <string name="main_redeem">redeem</string>
     <string name="main_settings">settings</string>
 
     <!-- SETTINGS SCREEN-->

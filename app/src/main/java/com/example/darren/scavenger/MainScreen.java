@@ -1,6 +1,7 @@
 package com.example.darren.scavenger;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -28,12 +29,14 @@ public class MainScreen extends Activity {
     TextView text_scav;
     TextView text_settings;
     Context context;
+    Activity act;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
         context = getApplicationContext();
+        act = this;
 
         btn_chest = (ImageButton) findViewById(R.id.main_btn_chest);
         btn_invite = (ImageButton) findViewById(R.id.main_btn_invite);
@@ -72,7 +75,15 @@ public class MainScreen extends Activity {
         btn_invite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "INVITE CLICKED", Toast.LENGTH_SHORT).show();
+                try{
+                    Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+                    intent.putExtra("SCAN_MODE","QR_CODE_MODE");
+                    startActivityForResult(intent,0);
+                } catch (ActivityNotFoundException e){
+                    //showDialog();
+                    Toast.makeText(context,"Download \"Barcode Scanner\" " +
+                            "from the Google Play Store to continue!",Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -90,7 +101,6 @@ public class MainScreen extends Activity {
                         // transition from splash to main menu
                         overridePendingTransition(R.anim.activityfadein,
                                 R.anim.splashfadeout);
-
                     }
                 }, 500);
             }
@@ -110,11 +120,47 @@ public class MainScreen extends Activity {
                         // transition from splash to main menu
                         overridePendingTransition(R.anim.activityfadein,
                                 R.anim.splashfadeout);
-
                     }
                 }, 500);
             }
         });
-
     }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent){
+        if (requestCode == 0){
+            if(resultCode == RESULT_OK){
+                String content = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+                Toast.makeText(context,"Content: " + content +
+                        "\n\nFormat: " + format, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+/*
+    public void showDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("No Scanner Found.");
+        builder.setMessage("Please download \"Barcode Scanner\" " +
+                "from the Play Store to continue!");
+        builder.setPositiveButton("Download Now", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Uri uri = Uri.parse("market://search?q=pname:" + "com.google.zxing.client.android");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    act.startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Log.d("MAIN_SCREEN_ERR: ", e.getLocalizedMessage());
+                }
+            }
+        });
+        builder.setNegativeButton("Not Now", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }*/
 }
