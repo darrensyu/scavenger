@@ -2,11 +2,16 @@ package com.example.darren.scavenger;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.PointTarget;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
@@ -14,7 +19,13 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.text.DecimalFormat;
 
 public class Scavenge extends Activity implements
         GoogleApiClient.ConnectionCallbacks,
@@ -25,6 +36,7 @@ public class Scavenge extends Activity implements
     Location currLocation;
     GoogleApiClient googleApiClient;
     LocationRequest locationRequest;
+    LatLng currCoordinates;
 
     public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
     public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS
@@ -34,15 +46,57 @@ public class Scavenge extends Activity implements
     double lat;
     double lng;
     Context context;
+    TextView marker_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scavenge);
         context = getApplicationContext();
+        marker_text = (TextView) findViewById(R.id.scv_chest_box);
         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setMyLocationEnabled(true);
+        final ShowcaseView showcaseView = new ShowcaseView.Builder(this,true)
+                    .setStyle(R.style.CustomShowcaseTheme)
+                    .setTarget(new PointTarget(0, 1000000))
+                            //.setTarget(new ViewTarget(chestList));
+                    .setContentTitle("Ready to Scavenge?")
+                    .setContentText("Use this map to look for dropped treasures. " +
+                            "These items are free to snatch if you get to them in time! " +
+                            "Once the item is found, scan the QR code to redeem. " +
+                            "Treasures will be added to the Chest! \n" +
+                            "\n" +
+                            "Start scavenging!")
+                    .build();
+            showcaseView.show();
+            showcaseView.overrideButtonClick(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showcaseView.hide();
+                }
+            });
+
+
         buildGoogleApiClient();
+        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                marker.showInfoWindow();
+                double markerDistance =
+                        69.00 * Math.sqrt(
+                                Math.pow((marker.getPosition().latitude -
+                                        currCoordinates.latitude), 2) +
+                                        Math.pow((marker.getPosition().longitude -
+                                                currCoordinates.longitude), 2));
+                //Log.d("Scav_distance",String.valueOf(markerDistance));
+                DecimalFormat df = new DecimalFormat("#.##");
+                marker_text.setText(df.format(markerDistance) + " miles away");
+                if (marker_text.getText().equals("0 miles away")) {
+                    marker_text.setText("It's close!");
+                }
+                return true;
+            }
+        });
     }
 
     @Override
@@ -105,7 +159,19 @@ public class Scavenge extends Activity implements
         map.clear();
         lat =  loc.getLatitude();
         lng = loc.getLongitude();
-        LatLng currCoordinates = new LatLng(lat,lng);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(currCoordinates,ZOOM_LEVEL));
+        currCoordinates = new LatLng(lat,lng);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(currCoordinates, ZOOM_LEVEL));
+        map.addMarker(new MarkerOptions().title("Jamba Juice")
+                .snippet("Status: unreleased")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.scavengers_gift))
+                .position(new LatLng(currCoordinates.latitude + 0.00003, currCoordinates.longitude + 0.00004)));
+        map.addMarker(new MarkerOptions().title("Starbucks")
+                .snippet("Status: unreleased")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.scavengers_gift))
+                .position(new LatLng(currCoordinates.latitude + 0.0008, currCoordinates.longitude + 0.0005)));
+        map.addMarker(new MarkerOptions().title("Best Buy")
+                .snippet("Status: unreleased")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.scavengers_gift))
+                .position(new LatLng(32.878163, -117.234716)));
     }
 }

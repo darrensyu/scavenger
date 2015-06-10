@@ -25,30 +25,6 @@ public class Chest extends Activity {
         super.onCreate(savedInstanceState);
         context = getApplicationContext();
         setContentView(R.layout.chest);
-        boolean chestft = this.getSharedPreferences("tutorial", Context.MODE_PRIVATE)
-                .getBoolean("chestFirst", true);
-        if(chestft){
-            final ShowcaseView showcaseView = new ShowcaseView.Builder(this,true)
-                    .setStyle(R.style.CustomShowcaseTheme)
-                    .setTarget(new PointTarget(0, 1000000))
-                    //.setTarget(new ViewTarget(chestList));
-                    .setContentTitle("How to use Chest!")
-                    .setContentText("Here is all the information you need to know about " +
-                            "the Chest feature!")
-                    .build();
-            showcaseView.show();
-            showcaseView.overrideButtonClick(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    showcaseView.hide();
-                    SharedPreferences sharedPreferences = context
-                            .getSharedPreferences("tutorial",Context.MODE_PRIVATE);
-                    SharedPreferences.Editor spe = sharedPreferences.edit();
-                    spe.putBoolean("chestFirst",false);
-                    spe.apply();
-                }
-            });
-        }
         loadAdapter();
     }
 
